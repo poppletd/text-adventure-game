@@ -107,7 +107,7 @@ def start_walking():
     print("you find a clear enough path through the trees and start walking")
     print("along the way you find a blackberry bush and stop to eat")
     print("+2 points")
-    player_score = player_score + 2
+    # player_score = player_score + 2
     print("after quite a bit of walking you start to see the edge of a lake")
     print("you walk towards it")
     print()
@@ -132,14 +132,14 @@ def river():
                 print("you reach your hand in")
                 print("a fish swims right into your hand and you manage to grab it")
                 print("+2 points")
-                player_score = player_score + 2
+                # player_score = player_score + 2
                 break
             elif num == 2:
                 print()
                 print("you reach your hand in")
                 print("you scrape your hand on a rock, it hurts really bad")
                 print("-1 point")
-                player_score = player_score - 1
+                # player_score = player_score - 1
                 break
         elif player_choice == 2:
             break
@@ -167,7 +167,7 @@ def cross_lake():
     print("you decide to swim across and just barely have enough strength to make it to the other side")
     print("you are left exhausted and unable to move for awhile")
     print("-2 points")
-    player_score = player_score - 2
+    # player_score = player_score - 2
     ending()
 
 def go_around():
@@ -176,7 +176,7 @@ def go_around():
     print("on the way you come across some pretty flowers")
     print("you stop to smell them and are filled with hope")
     print("+1 point")
-    player_score = player_score + 1
+    # player_score = player_score + 1
     print("after walking for awhile you end up on the opposite side of the lake just like you planned")
     ending()
 
