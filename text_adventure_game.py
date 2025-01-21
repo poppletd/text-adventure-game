@@ -1,7 +1,7 @@
 import random 
 import time
 
-player_score = 0 
+
     
 def print_intro_text():
     print()
@@ -36,7 +36,7 @@ def intro_scene():
     print("you need to figure out the best course of action")
     print()
 
-def choice_one():
+def choice_one(player_score):
     print("Would you like to:")
     print("1) Climb a nearby tree and check your surroundings")
     print("2) Start walking and see where you end up")
@@ -54,7 +54,7 @@ def choice_one():
             print("Invalid choice")
             continue
 
-def choice_two():
+def choice_two(player_score):
     print("Would you like to:")
     print("1) Go to the lake")
     print("2) Go to the river")
@@ -65,14 +65,14 @@ def choice_two():
             print("That is not a valid option")
             continue
         if player_choice == 1:
-            lake()
+            lake(player_score)
         elif player_choice == 2:
             river(player_score)
         else:
             print("Invalid choice")
             continue
 
-def choice_three():
+def choice_three(player_score):
     print("Would you like to: ")
     print("1) Try to cross the lake")
     print("2) Find a way around")
@@ -100,7 +100,7 @@ def climb_tree(player_score):
     print("on your right you can see a lake")
     print("on your left you see a river")
     print()
-    choice_two()
+    choice_two(player_score)
 
 def start_walking(player_score):
     print()
@@ -111,7 +111,7 @@ def start_walking(player_score):
     print("after quite a bit of walking you start to see the edge of a lake")
     print("you walk towards it")
     print()
-    lake()
+    lake(player_score)
 
 def river(player_score):
     print()
@@ -139,7 +139,7 @@ def river(player_score):
                 print("you reach your hand in")
                 print("you scrape your hand on a rock, it hurts really bad")
                 print("-1 point")
-                # player_score = player_score - 1
+                player_score = player_score - 1
                 break
         elif player_choice == 2:
             break
@@ -149,15 +149,15 @@ def river(player_score):
     print()
     print("there is no way to cross the river and nothing else to do there")
     print("you decide to go to the lake you spotted earlier")
-    lake()
+    lake(player_score)
 
-def lake():
+def lake(player_score):
     print()
     print("you arrive at the edge of the lake")
     print("the lake is massive and you can just barely see the other side")
     print("there might be a way around the lake, but it's hard to tell because of the fog")
     print()
-    choice_three()     
+    choice_three(player_score)     
 
 def cross_lake(player_score):
     print()
@@ -168,7 +168,7 @@ def cross_lake(player_score):
     print("you are left exhausted and unable to move for awhile")
     print("-2 points")
     player_score = player_score - 2
-    ending()
+    ending(player_score)
 
 def go_around(player_score):
     print()
@@ -178,13 +178,18 @@ def go_around(player_score):
     print("+1 point")
     player_score = player_score + 1
     print("after walking for awhile you end up on the opposite side of the lake just like you planned")
-    ending()
+    ending(player_score)
 
-def ending():
+def ending(player_score):
     print()
     print(f"your final score is: {player_score}")
+    print()
 
-        
-print_intro_text()
-intro_scene()
-choice_one()
+
+def main(player_score):
+    player_score = 0 
+    print_intro_text()
+    intro_scene()
+    choice_one(player_score)
+
+main(0)
