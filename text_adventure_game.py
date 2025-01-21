@@ -47,9 +47,9 @@ def choice_one():
             print("That is not a valid option")
             continue
         if player_choice == 1:
-            climb_tree()
+            climb_tree(player_score)
         elif player_choice == 2:
-            start_walking()
+            start_walking(player_score)
         else:
             print("Invalid choice")
             continue
@@ -67,7 +67,7 @@ def choice_two():
         if player_choice == 1:
             lake()
         elif player_choice == 2:
-            river()
+            river(player_score)
         else:
             print("Invalid choice")
             continue
@@ -83,14 +83,14 @@ def choice_three():
             print("That is not a valid option")
             continue
         if player_choice == 1:
-            cross_lake()
+            cross_lake(player_score)
         elif player_choice == 2:
-            go_around()
+            go_around(player_score)
         else:
             print("Invalid choice")
             continue
 
-def climb_tree():
+def climb_tree(player_score):
     print()
     print("you find the tallest tree you can climb nearby")
     print("once you get up to the top of the tree you're able to see a decent distance through the forest")
@@ -102,18 +102,18 @@ def climb_tree():
     print()
     choice_two()
 
-def start_walking():
+def start_walking(player_score):
     print()
     print("you find a clear enough path through the trees and start walking")
     print("along the way you find a blackberry bush and stop to eat")
     print("+2 points")
-    # player_score = player_score + 2
+    player_score = player_score + 2
     print("after quite a bit of walking you start to see the edge of a lake")
     print("you walk towards it")
     print()
     lake()
 
-def river():
+def river(player_score):
     print()
     print("you arrive at the river")
     print("the water is moving quickly")
@@ -132,7 +132,7 @@ def river():
                 print("you reach your hand in")
                 print("a fish swims right into your hand and you manage to grab it")
                 print("+2 points")
-                # player_score = player_score + 2
+                player_score = player_score + 2
                 break
             elif num == 2:
                 print()
@@ -159,7 +159,7 @@ def lake():
     print()
     choice_three()     
 
-def cross_lake():
+def cross_lake(player_score):
     print()
     print("you step foot into the lake to test how deep it is")
     print("the lake is too deep to walk through, you would have to swim all the way across")
@@ -167,20 +167,21 @@ def cross_lake():
     print("you decide to swim across and just barely have enough strength to make it to the other side")
     print("you are left exhausted and unable to move for awhile")
     print("-2 points")
-    # player_score = player_score - 2
+    player_score = player_score - 2
     ending()
 
-def go_around():
+def go_around(player_score):
     print()
     print("you start walking around the edge of the lake")
     print("on the way you come across some pretty flowers")
     print("you stop to smell them and are filled with hope")
     print("+1 point")
-    # player_score = player_score + 1
+    player_score = player_score + 1
     print("after walking for awhile you end up on the opposite side of the lake just like you planned")
     ending()
 
 def ending():
+    print()
     print(f"your final score is: {player_score}")
 
         
